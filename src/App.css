@@ -8,7 +8,13 @@
   --gsc-text: #536078;
   --gsc-border: #dce2eb;
 
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
   min-height: 100vh;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
   background: var(--gsc-off-white);
 }
@@ -20,7 +26,12 @@
 .history-hero {
   position: relative;
   display: flex;
+  width: 100%;
+  min-width: 0;
+  max-width: none;
   min-height: clamp(160px, 15vw, 240px);
+  margin: 0;
+  padding: 0;
   align-items: center;
   background-color: var(--gsc-navy-dark);
   background-position: center 42%;
@@ -40,8 +51,10 @@
 }
 
 .history-hero__content {
-  width: min(100% - 48px, 1280px);
+  width: min(calc(100% - 48px), 1280px);
+  min-width: 0;
   margin: 0 auto;
+  padding: 0;
 }
 
 .history-hero__branding {
@@ -51,6 +64,7 @@
 }
 
 .history-hero__logo {
+  display: block;
   width: clamp(72px, 7vw, 104px);
   height: auto;
   flex: 0 0 auto;
@@ -82,11 +96,19 @@
    ========================================================= */
 
 .history-main {
+  display: block;
   width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
 }
 
 .history-section {
   position: relative;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
   padding: clamp(70px, 8vw, 118px) 24px;
 }
 
@@ -113,6 +135,7 @@
 .history-section__inner {
   display: grid;
   width: min(100%, 1280px);
+  min-width: 0;
   margin: 0 auto;
   align-items: center;
   grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
@@ -134,6 +157,8 @@
 .history-copy {
   position: relative;
   z-index: 2;
+  width: 100%;
+  min-width: 0;
   max-width: 570px;
 }
 
@@ -189,10 +214,14 @@
 
 .history-visual {
   position: relative;
+  width: 100%;
+  min-width: 0;
 }
 
 .history-image-frame {
   position: relative;
+  width: 100%;
+  min-width: 0;
   overflow: visible;
 }
 
@@ -241,6 +270,7 @@
   z-index: 1;
   display: block;
   width: 100%;
+  height: auto;
   aspect-ratio: 16 / 11;
   border: 1px solid rgba(7, 27, 59, 0.12);
   background: #dfe4eb;
@@ -277,7 +307,7 @@
   }
 
   .history-hero__content {
-    width: min(100% - 40px, 1280px);
+    width: min(calc(100% - 40px), 1280px);
   }
 
   .history-section {
@@ -319,7 +349,7 @@
   }
 
   .history-hero__content {
-    width: min(100% - 32px, 1280px);
+    width: min(calc(100% - 32px), 1280px);
   }
 
   .history-hero__branding {
