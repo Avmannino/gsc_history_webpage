@@ -1,4 +1,5 @@
 import "./App.css";
+import Footer from "./components/Footer.jsx";
 
 const getImageUrl = (fileName) =>
   `${import.meta.env.BASE_URL}images/${fileName}`;
@@ -351,6 +352,8 @@ function App() {
           ),
         )}
       </main>
+
+      <Footer />
     </div>
   );
 }
