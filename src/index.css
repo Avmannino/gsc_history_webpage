@@ -21,7 +21,8 @@ body,
 #root {
   width: 100%;
   min-width: 320px;
-  min-height: 100%;
+  height: auto;
+  min-height: 0;
   margin: 0 !important;
   padding: 0 !important;
 }
@@ -33,14 +34,12 @@ html {
 }
 
 body {
-  min-height: 100vh;
   overflow-x: hidden;
   background: #f4f6fa;
 }
 
 #root {
   display: block;
-  min-height: 100vh;
   overflow-x: hidden;
 }
 
