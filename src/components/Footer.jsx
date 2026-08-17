@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import "./Footer.css";
 
 /*
@@ -117,27 +118,93 @@ function FooterLogo() {
 }
 
 function ExploreMenu() {
+  const [openGroups, setOpenGroups] = useState(() => new Set());
+  const [panelHeights, setPanelHeights] = useState({});
+  const panelRefs = useRef(new Map());
+
+  useEffect(() => {
+    const heights = {};
+
+    panelRefs.current.forEach((node, title) => {
+      heights[title] = node.scrollHeight;
+    });
+
+    setPanelHeights(heights);
+  }, []);
+
+  const toggleGroup = (title) => {
+    setOpenGroups((current) => {
+      const next = new Set(current);
+
+      if (next.has(title)) {
+        next.delete(title);
+      } else {
+        next.add(title);
+      }
+
+      return next;
+    });
+  };
+
   return (
     <nav className="footer-menu" aria-label="Footer navigation">
       <h2>Explore</h2>
 
       <div className="footer-menu__groups">
-        {exploreGroups.map((group) => (
-          <div className="footer-menu__group" key={group.title}>
-            <h3 className="footer-menu__group-title">{group.title}</h3>
+        {exploreGroups.map((group) => {
+          const isOpen = openGroups.has(group.title);
+          const measuredHeight = panelHeights[group.title];
 
-            <ul>
-              {group.links.map((link) => (
-                <li key={link.label}>
-                  <a href={link.href} target="_top">
-                    <span>{link.label}</span>
-                    <ArrowIcon />
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          return (
+            <div className="footer-menu__group" key={group.title}>
+              <button
+                type="button"
+                className="footer-menu__group-title"
+                onClick={() => toggleGroup(group.title)}
+                aria-expanded={isOpen}
+              >
+                <span>{group.title}</span>
+
+                <span
+                  className={`footer-menu__group-arrow${
+                    isOpen ? " footer-menu__group-arrow--open" : ""
+                  }`}
+                  aria-hidden="true"
+                >
+                  <ArrowIcon />
+                </span>
+              </button>
+
+              <div
+                className={`footer-menu__group-panel${
+                  isOpen ? " footer-menu__group-panel--open" : ""
+                }`}
+                style={{
+                  maxHeight: isOpen ? `${measuredHeight ?? 600}px` : "0px",
+                }}
+              >
+                <ul
+                  ref={(node) => {
+                    if (node) {
+                      panelRefs.current.set(group.title, node);
+                    } else {
+                      panelRefs.current.delete(group.title);
+                    }
+                  }}
+                >
+                  {group.links.map((link) => (
+                    <li key={link.label}>
+                      <a href={link.href} target="_top">
+                        <span>{link.label}</span>
+                        <ArrowIcon />
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </nav>
   );

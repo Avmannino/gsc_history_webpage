@@ -189,12 +189,19 @@
 }
 
 .footer-menu__group-title {
-  margin: 0 0 9px;
-  padding-bottom: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
+  width: 100%;
+  margin: 0 0 9px;
+  padding: 0 0 11px;
+
+  border: 0;
   border-bottom: 1px solid var(--footer-line);
 
   color: var(--footer-white);
+  background: none;
 
   font-family: "Bebas Neue", Impact, sans-serif;
 
@@ -203,6 +210,39 @@
   letter-spacing: 0.05em;
   line-height: 1;
   text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.footer-menu__group-arrow {
+  display: inline-flex;
+
+  transform: rotate(90deg);
+  transition: transform 200ms ease;
+}
+
+.footer-menu__group-arrow--open {
+  transform: rotate(-90deg);
+}
+
+.footer-menu__group-arrow svg {
+  width: 13px;
+  height: 13px;
+
+  fill: none;
+
+  stroke: var(--footer-red);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-menu__group-panel {
+  overflow: hidden;
+
+  max-height: 0;
+
+  transition: max-height 260ms ease;
 }
 
 .footer-menu__group ul {
