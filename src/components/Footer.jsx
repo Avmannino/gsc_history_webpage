@@ -110,7 +110,7 @@ function FooterLogo() {
       aria-label="Greenwich Skating Club home"
     >
       <img
-        src={`${import.meta.env.BASE_URL}images/gsc-logo.png`}
+        src={`${import.meta.env.BASE_URL}images/gsc-alt-logo.png`}
         alt="Greenwich Skating Club"
       />
     </a>
@@ -223,7 +223,7 @@ function ConnectPanel() {
         <div className="footer-connect__details">
           <a href={`${SITE_URL}/directions`} target="_top">
             <PinIcon />
-            <span>Cardinal Road · Greenwich, Connecticut</span>
+            <span>15 Cardinal Road · Greenwich, CT 06830</span>
           </a>
 
           <a href={`mailto:${ADMISSIONS_EMAIL}`}>

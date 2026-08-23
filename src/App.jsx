@@ -156,35 +156,6 @@ const historySections = [
       },
     ],
   },
-  {
-    id: "timeline",
-    title: "Timeline",
-    layout: "full",
-    dark: false,
-    blocks: [
-      {
-        type: "table",
-        caption: "Greenwich Skating Club timeline",
-        headers: ["Year", "Milestone"],
-        rows: [
-          ["1954", "Greenwich Skating Club founded as an outdoor skating club."],
-          ["1960s", "Membership and youth hockey programs expand."],
-          [
-            "1970s",
-            "Clubhouse and facilities continue to grow while the Town opens its own municipal rink nearby.",
-          ],
-          [
-            "1980s–2000s",
-            "Travel hockey, figure skating, adult leagues, and curling become established programs.",
-          ],
-          [
-            "Recent years",
-            "Clubhouse renovations and continued investment in youth programming and member amenities.",
-          ],
-        ],
-      },
-    ],
-  },
 ];
 
 function HistoryList({ items, nested = false }) {

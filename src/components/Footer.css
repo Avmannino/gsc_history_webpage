@@ -149,7 +149,7 @@
 .footer-logo {
   display: inline-flex;
 
-  width: clamp(132px, 10vw, 172px);
+  width: clamp(104px, 8vw, 136px);
 
   margin-left: 20px;
   margin-top: 50px;
@@ -321,8 +321,6 @@
 
   margin-top: 27px;
   padding-top: 40px;
-
-  border-top: 1px solid var(--footer-line);
 }
 
 .footer-connect__info {
@@ -580,7 +578,7 @@
   }
 
   .footer-logo {
-    width: 138px;
+    width: 110px;
   }
 
   .footer-menu__groups {
@@ -637,9 +635,9 @@
 
   .footer-logo {
     position: relative;
-    left: -8px;
+    left: -13px;
 
-    width: 110px;
+    width: 88px;
 
     margin: 0 auto;
   }
@@ -663,6 +661,11 @@
   }
 
   .footer-menu__group-title {
+    justify-content: center;
+
+    gap: 10px;
+    padding-left: 10px;
+
     text-align: center;
   }
 
@@ -670,7 +673,7 @@
     justify-content: center;
 
     gap: 14px;
-    padding: 7px 14px;
+    padding: 7px 9px 7px 19px;
 
     text-align: center;
   }
