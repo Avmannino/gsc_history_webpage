@@ -253,6 +253,55 @@
   color: rgba(255, 255, 255, 0.76);
 }
 
+/* Link header */
+
+.history-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 40px;
+  color: var(--gsc-navy);
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.1rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.history-link svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 4px;
+  fill: none;
+  stroke: var(--gsc-red);
+  stroke-width: 2.1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 180ms ease;
+}
+
+.history-link svg + svg {
+  margin-left: -6px;
+}
+
+.history-link:hover {
+  color: var(--gsc-red);
+}
+
+.history-link:hover svg {
+  transform: translateX(3px);
+}
+
+.history-section--dark .history-link {
+  color: var(--gsc-white);
+}
+
+.history-section--dark .history-link:hover {
+  color: var(--gsc-red);
+}
+
 /* =========================================================
    LISTS
    ========================================================= */

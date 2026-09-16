@@ -18,7 +18,7 @@ const historySections = [
     blocks: [
       {
         type: "p",
-        text: `The Greenwich Skating Club was founded in 1954 by a group of local families who wanted to create a community-centered skating club for Greenwich residents. Originally, the club operated around an outdoor skating rink on Cardinal Road, near Greenwich High School. Over time, membership grew steadily as hockey and figure skating became increasingly popular.`,
+        text: `The Greenwich Skating Club was founded in 1954 by a group of local families who wanted to create a community-centered skating club for Greenwich residents. From its beginnings, the club has been centered around its outdoor rink on Cardinal Road, near Greenwich High School. Over time, membership grew steadily as hockey and figure skating became increasingly popular.`,
       },
     ],
   },
@@ -76,9 +76,9 @@ const historySections = [
       {
         type: "list",
         items: [
-          "Learn-to-skate and Learn-to-Play Hockey programs",
+          "Learn-to-Skate and Learn-to-Play Hockey programs",
           "Travel hockey teams",
-          "Girls' hockey",
+          "Girls hockey",
           "Adult recreational leagues",
           "Holiday Stick & Puck sessions",
         ],
@@ -101,15 +101,20 @@ const historySections = [
       },
       {
         type: "list",
-        items: ["NCAA hockey", "professional hockey", "Olympic competition"],
+        items: ["NCAA hockey", "Professional Hockey", "Olympic competition"],
       },
       {
         type: "p",
-        text: `Among the most-known alumnus is Cam Atkinson, who played at GSC as a Squirt before eventually reaching the NHL.`,
+        text: `Among the most-known alumnus is Cam Atkinson, who played at GSC as a Squirt before eventually reaching the NHL. Another notable alumnus is John Hayden, who also skated at GSC as a youth before starring at Yale University, where he won the 2013 NCAA national championship, and went on to play in the National Hockey League after being drafted by the Chicago Blackhawks.`,
       },
       {
         type: "p",
         text: `Many other collegiate players from Greenwich began skating at Cardinal Road before moving on to prep schools and Division I programs.`,
+      },
+      {
+        type: "link",
+        label: "GSC Alumni",
+        href: "https://www.greenwichskatingclub.com/alumni",
       },
     ],
   },
@@ -177,6 +182,14 @@ function HistoryList({ items, nested = false }) {
   );
 }
 
+function ChevronIcon() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="m9 5 7 7-7 7" />
+    </svg>
+  );
+}
+
 function HistoryBlock({ block }) {
   switch (block.type) {
     case "p":
@@ -184,6 +197,15 @@ function HistoryBlock({ block }) {
 
     case "list":
       return <HistoryList items={block.items} />;
+
+    case "link":
+      return (
+        <a className="history-link" href={block.href} target="_top">
+          <span>{block.label}</span>
+          <ChevronIcon />
+          <ChevronIcon />
+        </a>
+      );
 
     case "table":
       return (
