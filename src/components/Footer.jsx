@@ -3,7 +3,7 @@ import {
   useRef,
   useState,
 } from "react";
-import gscLogo from "./assets/gsc-logo.png";
+import gscAltLogo from "./assets/gsc-alt-logo.png";
 import "./Footer.css";
 
 const SITE_BASE_URL =
@@ -15,7 +15,7 @@ const MEMBER_LOGIN_URL =
 const MEMBERS_SITE_URL =
   "https://members.greenwichskatingclub.org";
 
-const CENTER_ICE_LOGO_SRC = gscLogo;
+const CENTER_ICE_LOGO_SRC = gscAltLogo;
 
 const exploreGroups = [
   {
